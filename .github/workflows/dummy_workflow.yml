@@ -23,11 +23,20 @@ jobs:
       run: |
         sleep 5
         echo "app build"
-  secret-consumer:
+  tests:
     runs-on: ubuntu-latest
     needs: build
     steps:
     - name: tests
+      shell: bash
+      run: |
+        sleep 5
+        echo "tests"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: tests
+    steps:
+    - name: deploy prod
       shell: bash
       run: |
         sleep 5
