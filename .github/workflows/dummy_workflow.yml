@@ -1,0 +1,34 @@
+name: 'Dummy'
+
+on:
+  push:
+    branches:
+     - '*'
+     
+permissions:
+  contents: read
+  actions: read
+  security-events: write
+ 
+env:
+ TF_LOG: INFO
+       
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: build_app
+      shell: bash
+      run: |
+        sleep 5
+        echo "app build"
+  secret-consumer:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: tests
+      shell: bash
+      run: |
+        sleep 5
+        echo "tests"
