@@ -40,5 +40,5 @@ jobs:
       shell: bash
       run: |
         sleep 5
-        sh /home/runner/work/DummyProject/DummyProject/deploy.sh 
+        #sh /home/runner/work/DummyProject/DummyProject/deploy.sh 
         echo "deployment to prod successful"
